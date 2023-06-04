@@ -18,6 +18,9 @@
     <tr>
       <th>Name</th>
       <th>Author</th>
+      <th>
+      Image
+      </th>
 
       <th></th>
     </tr>
@@ -27,6 +30,15 @@
       <tr id={"gallery-#{gallery.id}"}>
         <td><%= gallery.name %></td>
         <td><%= gallery.author %></td>
+        <td>
+
+
+         <img
+                  src={gallery.art_image}
+                  alt="art image"
+                style="width: 100px; height: 100px; object-fit: cover;"
+                />
+        </td>
 
         <td>
           <span><%= live_redirect "Show", to: Routes.gallery_show_path(@socket, :show, gallery) %></span>
