@@ -1,0 +1,31 @@
+<h1>Show Gallery</h1>
+
+<%= if @live_action in [:edit] do %>
+  <.modal return_to={Routes.gallery_show_path(@socket, :show, @gallery)}>
+    <.live_component
+      module={ArtStoreWeb.GalleryLive.FormComponent}
+      id={@gallery.id}
+      title={@page_title}
+      action={@live_action}
+      gallery={@gallery}
+      return_to={Routes.gallery_show_path(@socket, :show, @gallery)}
+    />
+  </.modal>
+<% end %>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @gallery.name %>
+  </li>
+
+  <li>
+    <strong>Author:</strong>
+    <%= @gallery.author %>
+  </li>
+
+</ul>
+
+<span><%= live_patch "Edit", to: Routes.gallery_show_path(@socket, :edit, @gallery), class: "button" %></span> |
+<span><%= live_redirect "Back", to: Routes.gallery_index_path(@socket, :index) %></span>

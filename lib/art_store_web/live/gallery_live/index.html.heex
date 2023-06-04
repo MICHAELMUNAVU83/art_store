@@ -1,0 +1,41 @@
+<h1>Listing Galleries</h1>
+
+<%= if @live_action in [:new, :edit] do %>
+  <.modal return_to={Routes.gallery_index_path(@socket, :index)}>
+    <.live_component
+      module={ArtStoreWeb.GalleryLive.FormComponent}
+      id={@gallery.id || :new}
+      title={@page_title}
+      action={@live_action}
+      gallery={@gallery}
+      return_to={Routes.gallery_index_path(@socket, :index)}
+    />
+  </.modal>
+<% end %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Author</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody id="galleries">
+    <%= for gallery <- @galleries do %>
+      <tr id={"gallery-#{gallery.id}"}>
+        <td><%= gallery.name %></td>
+        <td><%= gallery.author %></td>
+
+        <td>
+          <span><%= live_redirect "Show", to: Routes.gallery_show_path(@socket, :show, gallery) %></span>
+          <span><%= live_patch "Edit", to: Routes.gallery_index_path(@socket, :edit, gallery) %></span>
+          <span><%= link "Delete", to: "#", phx_click: "delete", phx_value_id: gallery.id, data: [confirm: "Are you sure?"] %></span>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<span><%= live_patch "New Gallery", to: Routes.gallery_index_path(@socket, :new) %></span>
