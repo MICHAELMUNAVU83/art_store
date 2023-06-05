@@ -20,6 +20,7 @@ Art Store Project , Uploading Images in Phoenix Live view
 ## Screenshots
 
 
+<img width="1440" alt="Screenshot 2023-06-05 at 07 45 05" src="https://github.com/MICHAELMUNAVU83/art_store/assets/86654131/3b8a3c8f-5979-4375-a409-d66e69845ab1">
 
 
 
