@@ -15,7 +15,7 @@ Art Store Project , Uploading Images in Phoenix Live view
 ## About The App
  This is a art store project that focuses on uploading images in Phoenix Liv Veiw .
  It is a pre-requisite for  Artile I wrote on Medium .
- [Library Management System in Phoenix](https://medium.com/@michaelmunavu83/unlock-the-power-of-validations-in-phoenix-live-view-ensuring-robust-user-input-69f77aed422c)
+ [Library Management System in Phoenix](https://medium.com/@michaelmunavu83/uploading-images-in-phoenix-live-view-459b481a8385)
 
 ## Screenshots
 
